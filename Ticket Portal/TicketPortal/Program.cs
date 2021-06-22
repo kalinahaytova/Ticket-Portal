@@ -24,7 +24,12 @@ namespace Ticket_Portal
 
             List<Event> events = category.ChooseCategory(categoryName);
 
-            Console.WriteLine("Choose an event: ");
+            Console.WriteLine();
+            Console.Write("Choose an event: ");
+            int eventID = int.Parse(Console.ReadLine());
+
+            ReservationProcess reservationProcess = new ReservationProcess(events);
+            reservationProcess.EventById(eventID);
         }
     }
 }

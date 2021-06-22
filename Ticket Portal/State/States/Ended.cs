@@ -12,6 +12,7 @@ namespace Ticket_Portal.State.States
         {
 
         }
+
         public static Ended GetEnded()
         {
             if(state == null)

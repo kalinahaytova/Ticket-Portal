@@ -19,7 +19,7 @@ namespace Ticket_Portal.FlyWeight
             _events = events;
         }
 
-        public Information GetInformation(int eventID, string infoType)
+        public Information GetInformation(string infoType)
         {
             Information information = null;
 
@@ -50,7 +50,7 @@ namespace Ticket_Portal.FlyWeight
             {
                 if(_events[i].ID == ID)
                 {
-                    totalPriceSum = _events[i].Price + (userCount * _events[i].Price);
+                    totalPriceSum = userCount * _events[i].Price;
 
                     Console.WriteLine("Event: {0}", _events[i].Gig);
                     Console.WriteLine("From: {0}", _events[i].StartDate);
@@ -72,9 +72,5 @@ namespace Ticket_Portal.FlyWeight
             Console.WriteLine();
         }
 
-        internal void GetInformation(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

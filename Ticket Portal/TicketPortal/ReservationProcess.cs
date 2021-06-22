@@ -25,9 +25,9 @@ namespace Ticket_Portal.TicketPortal
             {
                 if(_events[i].ID == eventID)
                 {
-                    if(_events[i].StartDate > new DateTime(2021, 6, 24) || _events[i].EndDate > new DateTime(2021, 6, 24))
+                    if(_events[i].StartDate > new DateTime(2021, 6, 1) || _events[i].EndDate > new DateTime(2021, 6, 1))
                     {
-                        if(_events[i].StartDate < new DateTime(2021, 7, 24) || _events[i].EndDate < new DateTime(2021, 7, 24))
+                        if(_events[i].StartDate < new DateTime(2021, 6, 24) || _events[i].EndDate < new DateTime(2021, 6, 24))
                         {
                             Console.WriteLine("The event has either been cancelled or is already over.");
                             eventID = int.Parse(Console.ReadLine());

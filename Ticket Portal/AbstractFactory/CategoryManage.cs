@@ -16,7 +16,7 @@ namespace Ticket_Portal.AbstractFactory
         {
             this._category = categoryFactory;
             _event = categoryFactory.GetEvents();
-
+            state = new EventState();
         }
         public void GetEventInfo()
         {
@@ -25,10 +25,10 @@ namespace Ticket_Portal.AbstractFactory
             for(int i=0; i<_event.Count; i++)
             {
                 Console.WriteLine(_event[i].ID + ". " + _event[i].Gig);
-                if (_event[i].StartDate > new DateTime(2021, 6, 24) || _event[i].EndDate > new DateTime(2021, 6, 24))
+                if (_event[i].StartDate > new DateTime(2021, 6, 1) || _event[i].EndDate > new DateTime(2021, 6, 1))
                 {
 
-                    if (_event[i].StartDate < new DateTime(2021, 7, 24) || _event[i].EndDate < new DateTime(2021, 7, 24))
+                    if (_event[i].StartDate < new DateTime(2021, 6, 24) || _event[i].EndDate < new DateTime(2021, 6, 24))
                     {
                         state.EndedEvent();
                         state.State();
@@ -45,6 +45,7 @@ namespace Ticket_Portal.AbstractFactory
                 }
                 Console.WriteLine("Location: {0}", _event[i].Location);
                 Console.WriteLine("Price / Ticket: {0}", _event[i].Price + "$");
+                Console.WriteLine();
             }
         }
     }
