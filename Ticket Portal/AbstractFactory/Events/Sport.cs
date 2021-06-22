@@ -6,7 +6,7 @@ using Ticket_Portal.AbstractFactory.Events.Gigs;
 
 namespace Ticket_Portal.AbstractFactory.Events
 {
-    public abstract class Sport : CategoryFactory
+    public class Sport : CategoryFactory
     {
         public override List<Event> GetEvents()
         {
