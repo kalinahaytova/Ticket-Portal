@@ -4,6 +4,7 @@ using System.Text;
 using Ticket_Portal.AbstractFactory.Abstractions;
 using Ticket_Portal.FlyWeight;
 using Ticket_Portal.Mediator;
+using Ticket_Portal.Mediator.Participant;
 
 namespace Ticket_Portal.TicketPortal
 {
@@ -12,12 +13,14 @@ namespace Ticket_Portal.TicketPortal
         private readonly List<Event> _events;
         private PurchaseInfo info;
         private readonly PortalMediator mediator;
-        private readonly ConcreteUser concreteUser;
+        private readonly NextUser nextUser;
+        private readonly FinishUser finishUser;
         public ReservationProcess(List<Event> events)
         {
             _events = events;
             mediator = new PortalMediator();
-            concreteUser = new ConcreteUser(mediator);
+            nextUser = new NextUser(mediator);
+            finishUser = new FinishUser(mediator);
         }
         public void EventById(int eventID)
         {
@@ -81,13 +84,14 @@ namespace Ticket_Portal.TicketPortal
                 {
                     info.GetTotalTicketPrice(eventID, userCount);
 
-                    mediator.ConcreteUser = concreteUser;
+                    mediator.NextUser = nextUser;
+                    mediator.FinishUser = finishUser;
 
-                    concreteUser.Send("Are you sure you want to continue?");
+                    nextUser.Send("Are you sure you want to continue?");
                     var message = Console.ReadLine();
                     if(message == "Yes")
                     {
-                        concreteUser.Send(message);
+                        nextUser.Send(message);
                     }
                     else if (message == "No")
                     {

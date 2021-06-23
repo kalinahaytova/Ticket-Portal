@@ -2,23 +2,34 @@
 using System.Collections.Generic;
 using System.Text;
 using Ticket_Portal.Mediator.Abstractions;
+using Ticket_Portal.Mediator.Participant;
 
 namespace Ticket_Portal.Mediator
 {
     public class PortalMediator : IPortalMediator
     {
-        private ConcreteUser concreteUser;
+        private NextUser nextUser;
+        private FinishUser finishUser;
 
-        public ConcreteUser ConcreteUser
+        public FinishUser FinishUser
         {
-            set { concreteUser = value; }
+            set { finishUser = value; }
+        }
+
+        public NextUser NextUser
+        {
+            set { nextUser = value; }
         }
 
         public override void Send(string message, User user)
         {
-            if(user == concreteUser)
+            if(user == nextUser)
             {
-                concreteUser.Recieve(message);
+                nextUser.Recieve(message);
+            }
+            else
+            {
+                finishUser.Recieve(message);
             }
         }
     }

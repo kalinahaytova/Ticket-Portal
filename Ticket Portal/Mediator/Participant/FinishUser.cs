@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Ticket_Portal.Mediator.Abstractions;
 
-namespace Ticket_Portal.Mediator
+namespace Ticket_Portal.Mediator.Participant
 {
-    public class ConcreteUser : User
+    public class FinishUser : User
     {
-        public ConcreteUser(PortalMediator portal) : base(portal)
+        public FinishUser(PortalMediator portal) : base(portal)
         {
 
         }
@@ -17,7 +17,7 @@ namespace Ticket_Portal.Mediator
         }
         public void Recieve(string message)
         {
-            Console.WriteLine("Your tickets have been reserved successfully! Proceed to payment.");
+            Console.WriteLine("Tickets reserved successfully! Proceed to payment.");
         }
     }
 }
