@@ -44,7 +44,7 @@ namespace Ticket_Portal.AbstractFactory
                     }
                 }
                 Console.WriteLine("Location: {0}", _event[i].Location);
-                Console.WriteLine("Price / Ticket: {0}", _event[i].Price + "$");
+                Console.WriteLine("Price / Ticket: {0}", _event[i].Price + " leva");
                 Console.WriteLine();
             }
         }

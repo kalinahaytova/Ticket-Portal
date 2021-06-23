@@ -11,7 +11,7 @@ namespace Ticket_Portal.TicketPortal
     public class ReservationProcess
     {
         private readonly List<Event> _events;
-        private PurchaseInfo info;
+        private PurchaseInfo information;
         private readonly PortalMediator mediator;
         private readonly NextUser nextUser;
         private readonly FinishUser finishUser;
@@ -55,9 +55,9 @@ namespace Ticket_Portal.TicketPortal
         }
         public void GetInformation(int eventID)
         {
-            info = new PurchaseInfo(_events);
+            information = new PurchaseInfo(_events);
             int userCount;
-            if(info != null)
+            if(information != null)
             {
                 Console.Write("Number of tickets: ");
                 userCount = int.Parse(Console.ReadLine());
@@ -68,7 +68,7 @@ namespace Ticket_Portal.TicketPortal
                     {
                         for (int i = 0; i < userCount; i++)
                         {
-                            info.GetInformation("UserInfo:");
+                            information.GetInformation("UserInfo:");
                         }
                         break;
                     }
@@ -83,7 +83,7 @@ namespace Ticket_Portal.TicketPortal
 
                 if(userCount > 0)
                 {
-                    info.GetTotalTicketPrice(eventID, userCount);
+                    information.GetTotalTicketPrice(eventID, userCount);
 
                     mediator.NextUser = nextUser;
                     mediator.FinishUser = finishUser;

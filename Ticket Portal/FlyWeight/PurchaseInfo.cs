@@ -56,19 +56,19 @@ namespace Ticket_Portal.FlyWeight
                     Console.WriteLine("From: {0}", _events[i].StartDate);
                     Console.WriteLine("To: {0}", _events[i].EndDate);
                     Console.WriteLine("Where: {0}", _events[i].Location);
-                    Console.WriteLine("Price: {0}", _events[i].Price + "$");
+                    Console.WriteLine("Price: {0}", _events[i].Price + " leva");
                 }
             }
 
             Console.WriteLine();
 
-            for(int i=0; i<usersInfo.Count; i++)
+            for (int i = 0; i < usersInfo.Count; i++)
             {
                 Console.WriteLine("Your information: {0}", usersInfo[i]);
             }
 
-            Console.WriteLine();
-            Console.WriteLine("Total Price: {0}", Math.Round(totalPriceSum, 2) + "$");
+           
+            Console.WriteLine("Total Price: {0}", Math.Round(totalPriceSum, 2) + " leva");
             Console.WriteLine();
         }
 

@@ -8,10 +8,13 @@ namespace Ticket_Portal.FlyWeight.Info
 {
     public class UserInfo : Information
     {
-        public string GetInfo()
+        public string GetInformation()
         {
             Console.Write("Enter your name: ");
             string user = Console.ReadLine();
+
+            Console.Write("Enter your address: ");
+            string address = Console.ReadLine();
 
             Console.Write("Enter your phone number: ");
             string phoneNumber = Console.ReadLine();
@@ -55,13 +58,9 @@ namespace Ticket_Portal.FlyWeight.Info
                 }
             }
 
-            return user + " " + phoneNumber + " " + email;
+            return user + " " + address + " " + phoneNumber + " " + email;
 
         }
 
-        public string GetInformation()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
