@@ -64,7 +64,7 @@ namespace Ticket_Portal.FlyWeight
 
             for(int i=0; i<usersInfo.Count; i++)
             {
-                Console.WriteLine("User information: {0}", usersInfo[i]);
+                Console.WriteLine("Your information: {0}", usersInfo[i]);
             }
 
             Console.WriteLine();

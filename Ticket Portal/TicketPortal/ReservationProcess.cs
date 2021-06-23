@@ -15,6 +15,7 @@ namespace Ticket_Portal.TicketPortal
         private readonly PortalMediator mediator;
         private readonly NextUser nextUser;
         private readonly FinishUser finishUser;
+
         public ReservationProcess(List<Event> events)
         {
             _events = events;
@@ -67,7 +68,7 @@ namespace Ticket_Portal.TicketPortal
                     {
                         for (int i = 0; i < userCount; i++)
                         {
-                            info.GetInformation("User Info:");
+                            info.GetInformation("UserInfo:");
                         }
                         break;
                     }
@@ -91,7 +92,7 @@ namespace Ticket_Portal.TicketPortal
                     var message = Console.ReadLine();
                     if(message == "Yes")
                     {
-                        nextUser.Send(message);
+                        finishUser.Send(message);
                     }
                     else if (message == "No")
                     {

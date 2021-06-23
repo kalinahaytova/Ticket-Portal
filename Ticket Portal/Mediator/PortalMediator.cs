@@ -11,14 +11,15 @@ namespace Ticket_Portal.Mediator
         private NextUser nextUser;
         private FinishUser finishUser;
 
-        public FinishUser FinishUser
-        {
-            set { finishUser = value; }
-        }
+       
 
         public NextUser NextUser
         {
             set { nextUser = value; }
+        } 
+        public FinishUser FinishUser
+        {
+            set { finishUser = value; }
         }
 
         public override void Send(string message, User user)
