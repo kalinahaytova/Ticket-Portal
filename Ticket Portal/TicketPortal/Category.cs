@@ -30,35 +30,35 @@ namespace Ticket_Portal.TicketPortal
                 }
                 else if(categoryName == culture.GetType().Name)
                 {
-                    CategoryManage categoryManage = new CategoryManage(concert);
+                    CategoryManage categoryManage = new CategoryManage(culture);
                     categoryManage.GetEventInfo();
                     events = culture.GetEvents();
                     break;
                 }
                 else if (categoryName == family.GetType().Name)
                 {
-                    CategoryManage categoryManage = new CategoryManage(concert);
+                    CategoryManage categoryManage = new CategoryManage(family);
                     categoryManage.GetEventInfo();
                     events = family.GetEvents();
                     break;
                 }
                 else if (categoryName == sport.GetType().Name)
                 {
-                    CategoryManage categoryManage = new CategoryManage(concert);
+                    CategoryManage categoryManage = new CategoryManage(sport);
                     categoryManage.GetEventInfo();
                     events = sport.GetEvents();
                     break;
                 }
                 else if (categoryName == other.GetType().Name)
                 {
-                    CategoryManage categoryManage = new CategoryManage(concert);
+                    CategoryManage categoryManage = new CategoryManage(other);
                     categoryManage.GetEventInfo();
                     events = other.GetEvents();
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Please, choose event type: ");
+                    Console.WriteLine("Please, choose event category: ");
                     categoryName = Console.ReadLine();
                 }
             }

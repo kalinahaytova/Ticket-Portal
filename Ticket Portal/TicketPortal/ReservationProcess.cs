@@ -110,9 +110,15 @@ namespace Ticket_Portal.TicketPortal
                         Console.WriteLine("Error.");
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Something went wrong.");
+                }
+            }
+            else
+            {
                 Console.WriteLine("Something went wrong.");
             }
         }
-
     }
 }
